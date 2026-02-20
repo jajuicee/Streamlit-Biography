@@ -2,16 +2,12 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
-# --- 1. Page Configuration ---
-# This changes the browser tab title and icon, and centers the layout
+
 st.set_page_config(page_title="Reinzo's Portfolio", page_icon="", layout="centered")
 
-# --- 2. Header Section ---
-# Using columns to put an avatar emoji next to your name
 col1, col2 = st.columns([1, 3])
 
 with col1:
-    # A large emoji to act as a placeholder profile picture
     st.markdown("<h1 style='text-align: center; font-size: 90px;'></h1>", unsafe_allow_html=True)
 
 with col2:
@@ -19,9 +15,9 @@ with col2:
     st.subheader(" BSIT - 3rd Year")
     st.caption("Future AI Engineer & Web Developer")
 
-st.divider() # Adds a clean horizontal line
+st.divider() 
 
-# --- 3. About Me Section ---
+
 st.header(" About Me")
 st.info(
     "I love to play videogames  and I am currently exploring the ever-evolving world of tech. "
@@ -30,17 +26,17 @@ st.info(
 
 st.divider()
 
-# --- 4. Skills Bar Chart Section ---
-st.header(" My Skills")
-st.write("Here is a breakdown of my current stats (out of 5):")
 
-# Create a Pandas DataFrame with your provided data
+st.header(" My Skills")
+st.write("Here is a breakdown of my current skills (out of 5):")
+
+
 skills_data = pd.DataFrame({
     "Skill": ["Programming", "Debug", "Documentation", "Procrastinate", "Video Games"],
     "Level": [3, 4, 3, 5, 5]
 })
 
-# Create a visually appealing horizontal bar chart using Altair
+
 base_chart = alt.Chart(skills_data).mark_bar(
     cornerRadiusEnd=10,
     height=40           
